@@ -340,7 +340,7 @@ export default class AppAccountManager extends AppManager {
   }
 
   /**
-   * A `tgWebAuthToken` handed to us in the URL by a Telegram website. The
+   * A `tgWebAuthToken` handed to us in the URL by a Mauve website. The
    * account it belongs to lives on its own DC, so the base moves there before
    * we ask — the same way a migrated login would.
    */

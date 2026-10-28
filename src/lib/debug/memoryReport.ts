@@ -2,7 +2,7 @@
  * await window.memoryReport() - a one-call snapshot of the structures that dominate this TAB'S
  * PROCESS. Not just this thread: Chrome hosts a same-origin SharedWorker inside an existing
  * renderer process for that site - the tab's own - so the figure Chrome's task manager charges to
- * "Telegram Web" covers the page plus the MTProto worker, the crypto pool, the lottie pool and the
+ * "Mauve" covers the page plus the MTProto worker, the crypto pool, the lottie pool and the
  * per-tab compositor. `performance.memory` only ever reports the isolate that asks, which is how a
  * tab can read 125 MB of JS heap while its process holds 2.6 GB.
  *

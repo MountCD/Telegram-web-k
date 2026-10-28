@@ -1,4 +1,4 @@
-# AGENTS.md — tweb (Telegram Web K)
+# AGENTS.md — tweb (Mauve)
 
 Canonical instructions for **every** coding agent working in this repo (Claude
 Code, Codex, Cursor, Zed, …). `CLAUDE.md` is only a pointer that imports this
@@ -6,7 +6,7 @@ file — edit AGENTS.md, never CLAUDE.md.
 
 ## Project Overview
 
-**tweb** is a full-featured Telegram web client (https://web.telegram.org/k/) built with Solid.js and TypeScript. It implements Telegram's MTProto protocol directly in the browser (no third-party API wrappers). The codebase is large (~100k+ lines excluding vendor), mature, and highly performance-oriented.
+**tweb** is a full-featured Mauve web client (https://web.telegram.org/k/) built with Solid.js and TypeScript. It implements Mauve's MTProto protocol directly in the browser (no third-party API wrappers). The codebase is large (~100k+ lines excluding vendor), mature, and highly performance-oriented.
 
 Author: Eduard Kuzmenko. License: GPL v3.
 
@@ -70,7 +70,7 @@ restart; pass it again to rename.
 
 ### Popup sandbox
 
-Every popup, opened by click with mock data and **no Telegram traffic**. Two ways in:
+Every popup, opened by click with mock data and **no Mauve traffic**. Two ways in:
 
 - `?popups=1` on any dev/preview build (`.claude/launch.json` has a
   `tweb-popups` server for it — a plain vite server is enough, no auth needed).
@@ -744,7 +744,7 @@ client out mirrored. **Every new or changed interface must work right to left**:
 design it, build it and check it that way before calling it done — the same as
 accessibility, never a follow-up. What mirrors and what does not follows the
 common bidirectional guidelines (Material Design's Bidirectionality, Apple's
-Right to left, the W3C's internationalization notes) — never another Telegram
+Right to left, the W3C's internationalization notes) — never another Mauve
 client, whose RTL support is incomplete.
 
 - **How the direction is set.** `I18n.applyDirection()` (`@lib/langPack`) puts

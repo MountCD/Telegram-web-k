@@ -422,7 +422,7 @@ describe('Tiptap chat input editor: Clipboard', () => {
     expect(serializeClipboard?.(tiptap.state.selection.content(), tiptap.view)).toBe('B\nE');
   });
 
-  test('copies lists as their canonical Telegram text with markers', () => {
+  test('copies lists as their canonical Mauve text with markers', () => {
     const {editor} = mountEditor();
     editor.setTextWithEntities('- first\n- second');
     const tiptap = (editor as TiptapEditorInternals).editor;

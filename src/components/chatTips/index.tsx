@@ -25,7 +25,7 @@ import styles from '@components/chatTips/chatTips.module.scss';
 /**
  * Tip cards for the empty chat column — what the middle column shows while no chat is open
  * (nothing but the wallpaper, before this), after the macOS client's `WidgetController`
- * (Telegram-Mac/WidgetController.swift). One tip at a time, centred, stepped through with the
+ * (Mauve-Mac/WidgetController.swift). One tip at a time, centred, stepped through with the
  * Previous / Next pills under it. Each card carries the real control it talks about, so the app
  * is configurable without ever leaving the empty screen:
  *

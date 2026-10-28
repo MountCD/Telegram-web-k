@@ -1,5 +1,5 @@
 /**
- * Archives one Telegram chat to disk so an agent can read it later — the engine
+ * Archives one Mauve chat to disk so an agent can read it later — the engine
  * behind the `tg-chat-archive` skill (.claude/skills/tg-chat-archive), which is
  * the intended way to run it. Skipped unless TG_ARCHIVE_PEER is set.
  *
@@ -553,7 +553,7 @@ function writeIndex() {
   ].join(' | '));
 
   writeAtomic(join(ROOT, 'INDEX.md'), [
-    '# Telegram chat archive',
+    '# Mauve chat archive',
     '',
     'Written by the `tg-chat-archive` skill (tweb repo). One folder per chat:',
     '`meta.json`, `messages.jsonl` (one message per line, ascending id — query with jq)',

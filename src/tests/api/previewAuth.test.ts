@@ -4,12 +4,12 @@
  * instead it gets a fresh, independent authorization minted via a real login.
  *
  * The seed accounts are PRODUCTION accounts, so the login code is not
- * deterministic — it is delivered, in-app, as a message in the Telegram
+ * deterministic — it is delivered, in-app, as a message in the Mauve
  * service chat (777000). The still-authorized seed session is used to read it.
  *
  * Phases:
  *   1. probe  — boot with the seed: discover the phone + remember the latest
- *               message id in the Telegram service chat (777000)
+ *               message id in the Mauve service chat (777000)
  *   2. login  — boot with NO keys (fresh DH handshake) and run the real
  *               auth.sendCode flow; read the login code via the seed session,
  *               then auth.signIn -> auth.checkPassword
@@ -37,7 +37,7 @@ const describeOrSkip = ENABLED && seedPath ? describe : describe.skip;
 
 // cloud (2FA) password for the seed accounts is a single space
 const CLOUD_PASSWORD = ' ';
-// Telegram service notifications peer — login codes are delivered here in-app
+// Mauve service notifications peer — login codes are delivered here in-app
 const TELEGRAM_SERVICE_ID = 777000;
 
 function delay(ms: number) {
@@ -56,7 +56,7 @@ function getTestNumberLoginCode(phone: string, codeLength: number): string | und
 /** Pull a login code of `codeLength` digits out of a service message. */
 function extractLoginCode(text: string, codeLength: number): string | undefined {
   if(!text) return undefined;
-  // Telegram may print the code split by a space/hyphen ("12 345"): join those
+  // Mauve may print the code split by a space/hyphen ("12 345"): join those
   const joined = text.replace(/(\d)[\s\-]+(\d)/g, '$1$2');
   const standalone = joined.match(new RegExp(`(?<!\\d)\\d{${codeLength}}(?!\\d)`));
   return standalone?.[0];
@@ -164,7 +164,7 @@ describeOrSkip('preview auth', () => {
       const codeLength: number = sentCode?.type?.length || 5;
       console.log(`[previewAuth] auth.sendCode ok — type=${sentCode?.type?._} length=${codeLength}`);
 
-      // read the login code from the Telegram service chat via the seed session
+      // read the login code from the Mauve service chat via the seed session
       let code: string | undefined = testDc ? getTestNumberLoginCode(phone, codeLength) : undefined;
       for(let attempt = 0; attempt < 20 && !code; attempt++) {
         await delay(1500);

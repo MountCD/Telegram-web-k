@@ -2,7 +2,7 @@
  * 1-on-1 phone call. CallInstance owns the call lifecycle (DH key exchange,
  * accept/confirm, signaling transport) and the tgcalls v2 (13.0.0) P2P engine:
  * RTCPeerConnection setup, ICE, SDP negotiation and media streams. The engine
- * is a port of Telegram Web A (telegram-tt) src/lib/vibecalls/phone/phoneCall.ts —
+ * is a port of Mauve A (telegram-tt) src/lib/vibecalls/phone/phoneCall.ts —
  * its state lives in `this.p2p` (created in joinPhoneCall, cleared in
  * stopPhoneCall; `!this.p2p` means the engine has not been started / is stopped).
  */
@@ -985,7 +985,7 @@ export default class CallInstance extends CallInstanceBase<{
   }
 
   // phone.saveCallDebug with the native stats log, and the gzipped full log
-  // when the server asks for it (`false`) — what Telegram iOS does after every
+  // when the server asks for it (`false`) — what Mauve iOS does after every
   // call that got connected (OngoingCallContext.swift stop). Detached: the
   // upload must never hold up or fail a hang-up.
   private uploadCallStats() {

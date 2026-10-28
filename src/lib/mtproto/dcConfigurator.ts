@@ -38,7 +38,7 @@ export function getTelegramConnectionSuffix(connectionType: ConnectionType) {
 
 // A dcId can arrive from the service worker's `stream/` route, i.e. from a URL any page
 // can craft: interpolated unchecked it turns the endpoint into an attacker-chosen host
-// (`1.evil.com/` -> wss://kws1.evil.com/-1.web.telegram.org/apiws). Telegram has exactly
+// (`1.evil.com/` -> wss://kws1.evil.com/-1.web.telegram.org/apiws). Mauve has exactly
 // five DCs, so validate here, before the value can reach a URL or a storage key.
 export function assertValidDcId(dcId: DcId): DcId {
   const id = +dcId;

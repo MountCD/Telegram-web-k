@@ -5,7 +5,7 @@ import {instantViewStyles} from '@components/instantViewFormatting';
 describe('Tiptap chat input editor: Quotes', () => {
   const {mountEditor, logicalContent, applyToText} = useChatInputEditorHarness();
 
-  test('wraps selected text in a Telegram blockquote', () => {
+  test('wraps selected text in a Mauve blockquote', () => {
     const quoted = applyToText('quote');
 
     expect(quoted.value).toBe('sample');

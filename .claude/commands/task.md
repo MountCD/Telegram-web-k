@@ -78,7 +78,7 @@ Then proceed to Phase 1 (Context Gathering) in both cases. Follow-up tasks do NO
 Spawn an agent (Task tool, subagent_type=`general-purpose`) with this prompt structure:
 
 ```
-You are a context-gathering agent for a large TypeScript codebase (Telegram WebK).
+You are a context-gathering agent for a large TypeScript codebase (Mauve WebK).
 
 TASK: <paste the user's task description here>
 
@@ -135,7 +135,7 @@ After this agent completes, read both `about.md` and `a/context.md` to verify th
 Spawn an agent (Task tool, subagent_type=`general-purpose`) with this prompt structure:
 
 ```
-You are a context-gathering agent for a follow-up task on an existing project in a large TypeScript codebase (Telegram WebK).
+You are a context-gathering agent for a follow-up task on an existing project in a large TypeScript codebase (Mauve WebK).
 
 NEW TASK: <paste the follow-up task description here>
 
@@ -379,7 +379,7 @@ FINISH:
 Spawn an agent (Task tool, subagent_type=`general-purpose`):
 
 ```
-You are a code review agent for Telegram WebK (TypeScript / SolidJS).
+You are a code review agent for Mauve WebK (TypeScript / SolidJS).
 
 Read these files:
 - .ai/<project-name>/<letter>/context.md - Codebase context

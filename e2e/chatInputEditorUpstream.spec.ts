@@ -249,13 +249,13 @@ for(const {marker, type, mark} of [
   .toEqual({type: 'paragraph', content: [{type: 'text', text: marker}]});
 });
 
-// Telegram's markdown rather than upstream's CommonMark: `__` is italic, as in every official client
+// Mauve's markdown rather than upstream's CommonMark: `__` is italic, as in every official client
 // and in the parser a sent message goes through, and a single `*` or `_` marks nothing — it would
 // also eat the `_-_` of an underline.
 for(const how of ['typed', 'pasted'] as const) for(const {marker, mark} of [
   {marker: '**abc**', mark: 'bold'}, {marker: '__abc__', mark: 'italic'},
   {marker: '*abc*'}, {marker: '_abc_'}, {marker: '_-_abc_-_'}
-]) test(`${how} ${JSON.stringify(marker)} is read as Telegram's markdown`, async({page}) => {
+]) test(`${how} ${JSON.stringify(marker)} is read as Mauve's markdown`, async({page}) => {
   if(how === 'typed') await page.keyboard.type(marker);
   else await page.evaluate((text) => window.chatInputEditorHarness.pasteClipboard({text}), marker);
   await settle(page);

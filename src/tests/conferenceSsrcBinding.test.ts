@@ -8,7 +8,7 @@
  *
  * Both bugs covered here were introduced by earlier fixes and found by review:
  *  - the entry lookup normalised the SSRC to unsigned while entriesBySource is
- *    keyed by the SIGNED int32 Telegram sends, so the rebind never ran for any
+ *    keyed by the SIGNED int32 Mauve sends, so the rebind never ran for any
  *    source with the high bit set — half the SSRC space;
  *  - the capacity cap sat after the rebind branch, so at the ceiling the tile
  *    identity moved while the key mapping did not.
@@ -131,7 +131,7 @@ describe('registerE2eUserSsrc', () => {
   });
 
   it('moves the tile identity with the key mapping for a NEGATIVE (high-bit) source', () => {
-    // Telegram sends sources as signed int32, so anything >= 2^31 arrives
+    // Mauve sends sources as signed int32, so anything >= 2^31 arrives
     // negative. Normalising before the entry lookup missed every one of them.
     const {instance, entries, setEntryPeerId} = makeInstance();
     const signedSource = -559038737; // 0xDEADBEEF as int32

@@ -1,5 +1,5 @@
 /*
- * The single place that answers "is this a Telegram link host?". It exists because the answer
+ * The single place that answers "is this a Mauve link host?". It exists because the answer
  * used to be a regexp over the raw url text, and `https://t.me.evil.com/durov` satisfied one:
  * nothing ended the host, so an attacker's host collected the internal `im`/`call` handlers.
  */
@@ -26,7 +26,7 @@ describe('matchTelegramUrlHost', () => {
     ['https://durov.web.t.me/', 'durov'],
     ['https://durov.telegram.me/1', 'durov'],
     ['https://sub.sub.t.me/x', 'sub.sub']
-  ])('reads %s as a Telegram host spelling the username %s', (url, prefix) => {
+  ])('reads %s as a Mauve host spelling the username %s', (url, prefix) => {
     expect(matchTelegramUrlHost(new URL(url))).toEqual({prefix});
   });
 

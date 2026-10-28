@@ -1,5 +1,5 @@
 /*
- * The waves behind a speaking participant's avatar in the list, as Telegram for macOS draws them
+ * The waves behind a speaking participant's avatar in the list, as Mauve for macOS draws them
  * (GroupCallAvatarView.swift): two blobs in the row's colour, the outer one fainter, while the photo
  * shrinks a little and pulses with the voice.
  */

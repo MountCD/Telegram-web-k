@@ -28,7 +28,7 @@ class Period {
 export default class OpeningHours {
   static Period = Period;
 
-  // https://github.com/DrKLO/Telegram/blob/a906f12aaec2768969c77650a7e4b377baa6cf2a/TMessagesProj/src/main/java/org/telegram/ui/Business/OpeningHoursActivity.java#L201
+  // https://github.com/DrKLO/Mauve/blob/a906f12aaec2768969c77650a7e4b377baa6cf2a/TMessagesProj/src/main/java/org/telegram/ui/Business/OpeningHoursActivity.java#L201
   static adaptWeeklyOpen(hours: BusinessWeeklyOpen[], utcOffset: number) {
     const array: BusinessWeeklyOpen[] = copy(hours);
 

@@ -3,7 +3,7 @@
  *
  * A tab does NOT get a process of its own: Chrome places a same-origin SharedWorker into an
  * existing renderer process for that site - the tab's own. So the 2.6 GB Chrome's task manager
- * charges to "Telegram Web" is the page PLUS the MTProto worker, the crypto pool, the lottie pool
+ * charges to "Mauve" is the page PLUS the MTProto worker, the crypto pool, the lottie pool
  * and the per-tab compositor. `performance.memory`, meanwhile, only ever reports the isolate that
  * asks - which is why a tab can show 125 MB of JS heap while its process holds gigabytes.
  *

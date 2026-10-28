@@ -10,7 +10,7 @@
  * - While nothing has come, a wave runs round the dots, each lighting up in turn (a lap in 1.2 s). It
  *   starts at dot 0; once data comes, every dot plays the pulse it is in to its end and starts no other,
  *   so the wave runs out over the rest of its lap rather than going off at once.
- * - The arrow turns into the ring as Telegram for iOS does it (RadialDownloadContentNode →
+ * - The arrow turns into the ring as Mauve for iOS does it (RadialDownloadContentNode →
  *   RadialProgressContentNode). The shaft is the visible end of a J that comes up out of the ring at its
  *   lower left; pressed, the visible piece slides back down the J into the ring and shrinks to nothing,
  *   dimming and thickening into a dot as it goes, while the head's arms draw back into the tip. The ring

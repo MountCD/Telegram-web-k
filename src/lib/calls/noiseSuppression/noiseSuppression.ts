@@ -4,7 +4,7 @@
  * call sends. tgcalls carries the same library for group calls
  * (GroupInstanceCustomImpl.cpp, AudioCapturePostProcessor), but runs it as a
  * voice-activity detector: its denoising is a switch, on by default only in
- * Telegram for macOS, off in tdesktop and Android, and absent on iOS, where
+ * Mauve for macOS, off in tdesktop and Android, and absent on iOS, where
  * the system's voice processing does the job. Of the browsers only Safari has
  * that path: its microphone with echo cancellation goes through Apple's voice
  * processing. RNNoise on top of it is not measured yet, so Safari (and every

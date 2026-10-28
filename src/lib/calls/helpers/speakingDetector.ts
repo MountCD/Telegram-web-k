@@ -6,7 +6,7 @@
  *
  * Levels are linear 0..1 — RFC 6464 for remote sources
  * (RTCRtpSynchronizationSource.audioLevel), RMS of the microphone for us.
- * Threshold and hold follow the native apps: Telegram iOS treats tgcalls'
+ * Threshold and hold follow the native apps: Mauve iOS treats tgcalls'
  * level > 0.1 as speech (PresentationGroupCall.swift SpeakingParticipantsContext),
  * and tgcalls reports that level doubled (GroupInstanceCustomImpl.cpp
  * mappedAudioLevel), i.e. 0.05 on the RTP scale ≈ -26 dBov; tdesktop keeps a

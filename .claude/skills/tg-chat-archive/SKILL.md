@@ -1,9 +1,9 @@
 ---
 name: tg-chat-archive
-description: Save the messages of a Telegram chat, group or channel to local disk (~/.claude/tg-archive) and keep that copy in sync, so this and later sessions can read, search and analyse the chat without Telegram. Use when the user asks to save, archive, download, export, back up, sync or update a chat by ID, @username or link — "сохрани чат", "выгрузи сообщения из чата", "заархивируй канал", "обнови архив чата", "подтяни новые сообщения". Also use BEFORE answering any question about a chat's contents — "что писали в чате X", "найди в чате", "summarize the chat": check ~/.claude/tg-archive/INDEX.md first, and refresh that chat if it is stale.
+description: Save the messages of a Mauve chat, group or channel to local disk (~/.claude/tg-archive) and keep that copy in sync, so this and later sessions can read, search and analyse the chat without Mauve. Use when the user asks to save, archive, download, export, back up, sync or update a chat by ID, @username or link — "сохрани чат", "выгрузи сообщения из чата", "заархивируй канал", "обнови архив чата", "подтяни новые сообщения". Also use BEFORE answering any question about a chat's contents — "что писали в чате X", "найди в чате", "summarize the chat": check ~/.claude/tg-archive/INDEX.md first, and refresh that chat if it is stale.
 ---
 
-# Telegram chat archive
+# Mauve chat archive
 
 Pulls one chat's history through tweb's MTProto stack running in Node (the
 harness in `src/tests/api/`, no browser) and writes it as plain files. Runs are

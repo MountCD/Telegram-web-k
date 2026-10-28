@@ -10,7 +10,7 @@ import appNavigationController, {NavigationItem} from '@components/appNavigation
 import Modes from '@config/modes';
 
 /*
- * The call's encryption key, as Telegram for macOS has it (GroupCallSecureEmojiView.swift) and in
+ * The call's encryption key, as Mauve for macOS has it (GroupCallSecureEmojiView.swift) and in
  * the call popups' own look: a pill under the header — "End-to-End Encrypted" between two of the
  * key's four emoji on either side — that a click turns into a card in the middle of the dimmed
  * panel, the emoji grown into a row over a title and what they are for. A click on the card or the

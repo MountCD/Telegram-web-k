@@ -17,8 +17,8 @@ const WEB_API_IDS = new Set([2496, 739222, 1025907]);
 const BROWSER_MARKERS = ['edg/', 'edgios/', 'edga/', 'chrome', 'safari', 'firefox'];
 
 /**
- * "Telegram Web K" / "Telegram Web A" — the flavour is the trailing letter. The
- * server splits it off into the version for some sessions ("Telegram Web",
+ * "Mauve Web K" / "Mauve Web A" — the flavour is the trailing letter. The
+ * server splits it off into the version for some sessions ("Mauve Web",
  * "2.2 K"), so this runs over the name and the version joined.
  */
 const WEB_CODE_NAME_REGEX = /\b([ak])\b\s*$/;

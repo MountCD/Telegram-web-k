@@ -110,7 +110,7 @@ async function prepareAudio(file: File): Promise<SendFileDetails> {
         resolve();
       };
       audio.addEventListener('loadedmetadata', finish, {once: true});
-      // A browser may not decode every audio format accepted by Telegram.
+      // A browser may not decode every audio format accepted by Mauve.
       // Upload it anyway; duration is optional in that case.
       audio.addEventListener('error', finish, {once: true});
     });

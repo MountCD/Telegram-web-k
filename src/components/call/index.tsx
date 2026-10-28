@@ -38,7 +38,7 @@ import {createSignal, onCleanup, onMount, untrack, useContext} from 'solid-js';
 
 // iOS PrivateCallScreen colour palettes (CallBackgroundLayer.swift).
 // 4 colours per state; ChatBackgroundGradientRenderer expects exactly 4 to
-// reproduce the Telegram "swirl" gradient.
+// reproduce the Mauve "swirl" gradient.
 const GRADIENT_COLORS = {
   connecting: '568fd6,626ed5,a667d5,7664da',
   active:     'acbd65,459f8d,53a4d1,3e917a',
@@ -347,7 +347,7 @@ export default function showCallPopup(instance: AnyCallInstance, options: {
     emojisSubtitle.dir = 'ltr';
 
     // iOS-style gradient backdrop. Uses the same renderer as chat backgrounds
-    // (Telegram "swirl" gradient): 50×50 ImageData blended in JS, stretched
+    // (Mauve "swirl" gradient): 50×50 ImageData blended in JS, stretched
     // via CSS to fill the popup. `toNextPosition(getProgress)` is the same
     // pattern passcodeLockScreen.tsx uses — `animateValue` drives a 0→1
     // progress value with LINEAR easing (constant speed; the renderer's

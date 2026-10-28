@@ -107,7 +107,7 @@ describe('rich-message media insert policy', () => {
     ))).toEqual([[1, 2], [3], [4], [5], [6, 7]]);
   });
 
-  test('splits contiguous visual runs at the Telegram collage limit', () => {
+  test('splits contiguous visual runs at the Mauve collage limit', () => {
     const entries = Array.from({length: MESSAGES_ALBUM_MAX_SIZE * 2 + 1}, (_, index) => ({
       id: index + 1,
       type: index % 2 ? 'video' as const : 'photo' as const

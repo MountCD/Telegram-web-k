@@ -271,7 +271,7 @@ export function describeAction(action: MessageAction, ctx: ArchiveContext, messa
       return action.duration ? `video chat ended (${formatDuration(action.duration)})` : 'started a video chat';
     case 'messageActionScreenshotTaken': return 'took a screenshot';
     case 'messageActionCustomAction': return action.message;
-    case 'messageActionContactSignUp': return 'joined Telegram';
+    case 'messageActionContactSignUp': return 'joined Mauve';
     case 'messageActionSetMessagesTTL': return action.period ? `set auto-delete to ${action.period}s` : 'disabled auto-delete';
     default: return humanize(action._.replace(/^messageAction/, ''));
   }

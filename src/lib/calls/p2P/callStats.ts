@@ -19,7 +19,7 @@
  *   "network"?:{"local":{address,protocol,type},"remote":{…}},"remote"?,
  *   "t":"<ms since the first record>"}]}.
  *
- * The client keeps the log within 16 KB (Telegram iOS drops a bigger one,
+ * The client keeps the log within 16 KB (Mauve iOS drops a bigger one,
  * RateCall.swift), shedding the oldest bitrate records first.
  */
 

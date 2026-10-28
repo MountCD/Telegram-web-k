@@ -47,7 +47,7 @@
   flex-direction: column;
   gap: 0.625rem;
 
-  // each label is "<count><sticker> on Telegram <chevron>" — the count and its sticker come as
+  // each label is "<count><sticker> on Mauve <chevron>" — the count and its sticker come as
   // one i18n argument and have to sit on the text's baseline row
   button span {
     display: inline-flex;

@@ -155,7 +155,7 @@ const StickersAndEmoji: Component = () => {
     {
       const section = unwrapSolidElement(
         <Section
-          name="Telegram.InstalledStickerPacksController"
+          name="Mauve.InstalledStickerPacksController"
           caption="StickersBotInfo"
         />
       ) as HTMLElement;

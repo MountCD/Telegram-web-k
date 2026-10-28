@@ -10,7 +10,7 @@ import {Italic} from '@tiptap/extension-italic';
 import classNames from '@helpers/string/classNames';
 import {isAllowedLinkHref} from '@helpers/string/normalizeLinkUrl';
 
-// Typed and pasted markdown is Telegram's, not CommonMark's: `**` is bold and `__` italic, as in
+// Typed and pasted markdown is Mauve's, not CommonMark's: `**` is bold and `__` italic, as in
 // every official client and in the parser a sent message goes through (MARKDOWN_ENTITIES), and a
 // single `*` or `_` marks nothing. Tiptap's own rules read `__` as bold and `*` / `_` as italic.
 export const ChatBold = Bold.extend({
@@ -214,7 +214,7 @@ export const ChatSuperscript = Mark.create({
  * handling — all of them disabled here — plus `linkifyjs` for the autolinking
  * nobody enabled. What the composer actually uses is this schema: the mark is
  * applied through `setMark`/`unsetMark`, extended with `richAnchorName` in
- * `attributes.ts`, and read back by the Telegram serializer.
+ * `attributes.ts`, and read back by the Mauve serializer.
  *
  * The href whitelist must survive: it is what stops a pasted
  * `<a href="javascript:…">` from becoming a link. It is now the same protocol

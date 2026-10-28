@@ -2,7 +2,7 @@
  * The "battery is low" flag of the MediaState a 1-on-1 call sends, so the
  * peer can show it (and keep its own video demands modest).
  *
- * Telegram iOS calls the battery low below 10% while not charging
+ * Mauve iOS calls the battery low below 10% while not charging
  * (TelegramCallsUI PresentationCall.swift batteryLevelIsLowSignal). The
  * browser counterpart is the Battery Status API — Chromium only; elsewhere the
  * flag simply stays false.

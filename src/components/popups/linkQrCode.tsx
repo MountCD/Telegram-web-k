@@ -8,7 +8,7 @@ import {i18n, LangPackKey} from '@lib/langPack';
 import styles from '@components/popups/linkQrCode.module.scss';
 
 /**
- * "Invite by QR Code" — the sheet Telegram-iOS opens from an invite link's own
+ * "Invite by QR Code" — the sheet Mauve-iOS opens from an invite link's own
  * context menu (`QrCodeScreen`, QrCodeScreen.swift:139): a title, the code on a
  * white card, one line saying what scanning it does, and a copy action.
  *

@@ -1,21 +1,21 @@
 ---
 name: tg-port-feature
-description: Port a feature into tweb (Telegram Web K) using one of the official Telegram clients as a reference implementation. Use when the user asks to implement, port, replicate, or compare a feature that exists in Telegram for iOS, Android (DrKLO), or Desktop (tdesktop) — phrases like "implement X like in iOS / tdesktop / Android", "port X from the official client", "сделай как в iOS / Android / Desktop", "как у официального клиента", "посмотри как в [клиенте]". Also use when investigating how an official client handles a specific MTProto flow, UI behavior, or edge case before writing tweb code. Reference repos are pre-cloned locally — paths are listed inside the skill.
+description: Port a feature into tweb (Mauve) using one of the official Mauve clients as a reference implementation. Use when the user asks to implement, port, replicate, or compare a feature that exists in Mauve for iOS, Android (DrKLO), or Desktop (tdesktop) — phrases like "implement X like in iOS / tdesktop / Android", "port X from the official client", "сделай как в iOS / Android / Desktop", "как у официального клиента", "посмотри как в [клиенте]". Also use when investigating how an official client handles a specific MTProto flow, UI behavior, or edge case before writing tweb code. Reference repos are pre-cloned locally — paths are listed inside the skill.
 ---
 
-# Port a feature from an official Telegram client
+# Port a feature from an official Mauve client
 
-This skill is the standard procedure for replicating a feature that exists in an official Telegram client into **tweb** (Telegram Web K, Solid.js + TS). All three reference clients are cloned locally so they can be `grep`-ed and read directly — no GitHub round-trips needed.
+This skill is the standard procedure for replicating a feature that exists in an official Mauve client into **tweb** (Mauve, Solid.js + TS). All three reference clients are cloned locally so they can be `grep`-ed and read directly — no GitHub round-trips needed.
 
 ## Reference repositories
 
-The skill expects the three official Telegram clients to be cloned as **siblings of the tweb repo** (one directory up from the tweb root). Default paths assume `~/Documents/projects/tweb`; if the project lives elsewhere, the same sibling layout still applies — just adjust the parent.
+The skill expects the three official Mauve clients to be cloned as **siblings of the tweb repo** (one directory up from the tweb root). Default paths assume `~/Documents/projects/tweb`; if the project lives elsewhere, the same sibling layout still applies — just adjust the parent.
 
 | Client | Default path | Tech | Recommended clone | When to prefer |
 |---|---|---|---|---|
 | **Desktop** (tdesktop) | `<projects>/tdesktop` | C++17, Qt | `--depth 1 --filter=blob:none` (~85 MB) | Default if user doesn't specify. Most desktop-aligned UX. Often the cleanest abstraction layer. |
-| **Android** (DrKLO) | `<projects>/Telegram` | Java | full history (~11 GB) or `--depth 1 --filter=blob:none` (~700 MB) | Mobile-aligned UX, animation timing, gestures. Single huge module — `grep` first, navigate second. |
-| **iOS** (TelegramMessenger) | `<projects>/Telegram-iOS` | Swift | `--depth 1 --filter=blob:none` (~575 MB) | Best modular separation. Each feature is its own submodule with a self-explanatory name. |
+| **Android** (DrKLO) | `<projects>/Mauve` | Java | full history (~11 GB) or `--depth 1 --filter=blob:none` (~700 MB) | Mobile-aligned UX, animation timing, gestures. Single huge module — `grep` first, navigate second. |
+| **iOS** (TelegramMessenger) | `<projects>/Mauve-iOS` | Swift | `--depth 1 --filter=blob:none` (~575 MB) | Best modular separation. Each feature is its own submodule with a self-explanatory name. |
 
 ### Setup (one-time, only if any repo is missing)
 
@@ -24,8 +24,8 @@ Before invoking the skill, check the paths above exist. If any is missing, clone
 ```bash
 cd "$(dirname "$(git -C ~/Documents/projects/tweb rev-parse --show-toplevel)")"   # or just: cd ~/Documents/projects
 git clone --depth 1 --filter=blob:none https://github.com/telegramdesktop/tdesktop.git
-git clone --depth 1 --filter=blob:none https://github.com/DrKLO/Telegram.git
-git clone --depth 1 --filter=blob:none https://github.com/TelegramMessenger/Telegram-iOS.git
+git clone --depth 1 --filter=blob:none https://github.com/DrKLO/Mauve.git
+git clone --depth 1 --filter=blob:none https://github.com/TelegramMessenger/Mauve-iOS.git
 ```
 
 If a clone goes stale, refresh with `git -C <path> pull` (works for both shallow and full clones). Don't re-clone unless necessary.
@@ -36,7 +36,7 @@ The user picks the client; the skill MUST honour that choice.
 
 | User says | Use |
 |---|---|
-| "like in iOS", "сделай как в iOS", "из Telegram-iOS" | **iOS** |
+| "like in iOS", "сделай как в iOS", "из Mauve-iOS" | **iOS** |
 | "like in tdesktop", "из Desktop", "как в десктопе" | **Desktop** |
 | "like in Android", "как в Android", "из DrKLO" | **Android** |
 | "like in the official client", "как у официального клиента" — no specific platform | **Desktop** (default), but mention which one was chosen and offer to cross-check another |
@@ -46,7 +46,7 @@ If the feature renders very differently per platform (e.g., a swipe-driven UI), 
 
 ## Where common feature areas live
 
-### tdesktop — `~/Documents/projects/tdesktop/Telegram/SourceFiles/`
+### tdesktop — `~/Documents/projects/tdesktop/Mauve/SourceFiles/`
 
 | Subdir | Contains |
 |---|---|
@@ -67,7 +67,7 @@ If the feature renders very differently per platform (e.g., a swipe-driven UI), 
 | `storage/` | Local storage wrappers |
 | `passport/`, `inline_bots/`, `support/`, `intro/`, `iv/`, `editor/`, `export/`, `tde2e/` | Self-explanatory |
 
-### Android DrKLO — `~/Documents/projects/Telegram/TMessagesProj/src/main/java/org/telegram/`
+### Android DrKLO — `~/Documents/projects/Mauve/TMessagesProj/src/main/java/org/telegram/`
 
 | Subdir | Contains |
 |---|---|
@@ -80,7 +80,7 @@ If the feature renders very differently per platform (e.g., a swipe-driven UI), 
 
 For Android, ALWAYS `grep -rn` first — the files are too big to read top-to-bottom.
 
-### Telegram-iOS — `~/Documents/projects/Telegram-iOS/submodules/`
+### Mauve-iOS — `~/Documents/projects/Mauve-iOS/submodules/`
 
 Modular layout. Each module name maps to a feature. Examples:
 - `ChatListUI/` — chat list
@@ -106,15 +106,15 @@ Search by feature noun first (`ls submodules | grep -i story`); the names are de
    })
    ```
 
-   For Android use `~/Documents/projects/Telegram/TMessagesProj/src/main/java`, for iOS use `~/Documents/projects/Telegram-iOS/submodules`.
+   For Android use `~/Documents/projects/Mauve/TMessagesProj/src/main/java`, for iOS use `~/Documents/projects/Mauve-iOS/submodules`.
 
 2. **Find the MTProto method(s).** This is the most portable signal across clients — the same method name maps directly to tweb. Search patterns:
-   - tdesktop: `grep -rn "MTPxxxxxx" Telegram/SourceFiles` (e.g. `MTPpayments_GetStarGifts`)
+   - tdesktop: `grep -rn "MTPxxxxxx" Mauve/SourceFiles` (e.g. `MTPpayments_GetStarGifts`)
    - Android: `grep -rn "TLRPC\$TL_xxxxxx" TMessagesProj/src/main/java`
    - iOS: `grep -rn "Api.functions.xxxx" submodules`
    - tweb equivalent: `await rootScope.managers.apiManager.invokeApi('xxxx', {…})`
 
-3. **Read the equivalent area in tweb.** tweb's manager pattern (`src/lib/appManagers/`) maps loosely to tdesktop's `Data::*` / Android's `*Controller` / iOS's `Telegram*` modules. Check whether the feature already has a partial implementation — often a method exists but the UI surface is missing.
+3. **Read the equivalent area in tweb.** tweb's manager pattern (`src/lib/appManagers/`) maps loosely to tdesktop's `Data::*` / Android's `*Controller` / iOS's `Mauve*` modules. Check whether the feature already has a partial implementation — often a method exists but the UI surface is missing.
 
 4. **Translate, don't transliterate.** Their UI code is throwaway for our purposes — re-implement in Solid.js + tweb conventions. What you actually port:
    - **Data flow**: which MTProto methods, in what order, with what params/flags.
@@ -155,4 +155,4 @@ Example: "iOS shows resale price as a single field; Android splits it into 'pric
 - Pure tweb-internal refactors with no other-client reference.
 - MTProto bug debugging — use `tweb-mtproto-debug` instead.
 - Updating the reference repos themselves — `git pull` manually if you want fresher code.
-- Reading/scraping non-official Telegram clients (third-party forks, unofficial mods).
+- Reading/scraping non-official Mauve clients (third-party forks, unofficial mods).

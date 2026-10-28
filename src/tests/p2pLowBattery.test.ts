@@ -1,6 +1,6 @@
 /*
  * The low-battery flag a 1-on-1 call sends in its MediaState (p2P/lowBattery):
- * below 10% and not charging, as Telegram iOS reports it.
+ * below 10% and not charging, as Mauve iOS reports it.
  */
 import {describe, expect, it, vi} from 'vitest';
 import watchLowBattery, {isBatteryLevelLow} from '@lib/calls/p2P/lowBattery';

@@ -46,13 +46,13 @@ describe('session platform icon', () => {
       device_model: 'Chrome'
     }));
 
-    expect(web('Telegram WebK', '2.2')).toBe('web_k_filled');
-    expect(web('Telegram Web K')).toBe('web_k_filled');
-    expect(web('Telegram Web A')).toBe('web_a_filled');
+    expect(web('Mauve WebK', '2.2')).toBe('web_k_filled');
+    expect(web('Mauve Web K')).toBe('web_k_filled');
+    expect(web('Mauve Web A')).toBe('web_a_filled');
     // the server puts the flavour letter in the version for some sessions
-    expect(web('Telegram Web', '2.2 K')).toBe('web_k_filled');
-    expect(web('Telegram Web', '1.0')).toBe('web_filled');
-    expect(web('Telegram Web')).toBe('web_filled');
+    expect(web('Mauve Web', '2.2 K')).toBe('web_k_filled');
+    expect(web('Mauve Web', '1.0')).toBe('web_filled');
+    expect(web('Mauve Web')).toBe('web_filled');
   });
 
   it('recognises a browser session from an unlisted api_id', () => {
@@ -66,14 +66,14 @@ describe('session platform icon', () => {
   it('recognises mobile clients', () => {
     expect(getSessionPlatformIcon(makeAuthorization({
       api_id: 6,
-      app_name: 'Telegram Android',
+      app_name: 'Mauve Android',
       device_model: 'Pixel 8',
       platform: 'Android'
     }))).toBe('android_filled');
 
     expect(getSessionPlatformIcon(makeAuthorization({
       api_id: 1,
-      app_name: 'Telegram iOS',
+      app_name: 'Mauve iOS',
       device_model: 'iPhone 15 Pro',
       platform: 'iOS'
     }))).toBe('apple_filled');

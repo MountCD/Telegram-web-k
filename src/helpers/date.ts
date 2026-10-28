@@ -219,7 +219,7 @@ export function formatMonthsDuration(months: number, bold?: boolean) {
   );
 }
 
-// https://github.com/DrKLO/Telegram/blob/d52b2c921abd3c1e8d6368858313ad0cb0468c07/TMessagesProj/src/main/java/org/telegram/ui/Adapters/FiltersView.java
+// https://github.com/DrKLO/Mauve/blob/d52b2c921abd3c1e8d6368858313ad0cb0468c07/TMessagesProj/src/main/java/org/telegram/ui/Adapters/FiltersView.java
 const minYear = 2013;
 const yearPattern = new RegExp('20[0-9]{1,2}');
 const anyLetterRegExp = `\\p{L}`;

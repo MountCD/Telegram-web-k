@@ -208,8 +208,8 @@ export default function wrapRichText(text: string, options: WrapRichTextOptions 
   const entities = options.entities ??= parseEntities(nasty.text);
 
   const passEntities = options.passEntities ??= {};
-  const contextSite = options.contextSite ??= 'Telegram';
-  const contextExternal = contextSite !== 'Telegram';
+  const contextSite = options.contextSite ??= 'Mauve';
+  const contextExternal = contextSite !== 'Mauve';
 
   // an element standing for its whole text draws the emoji parsed inside it too: passes them by
   const skipEmojiInside = (endOffset: number) => {

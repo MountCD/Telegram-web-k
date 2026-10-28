@@ -186,9 +186,9 @@ const EMBED_URL_SANDBOX_ATTRIBUTES = EMBED_SANDBOX_ATTRIBUTES + ' allow-same-ori
 // block to something a tall embed could plausibly need, never to an arbitrary size.
 const MAX_EMBED_VIEWPORTS = 4;
 
-// An `html` embed is a wrapper document whose canonical link points at Telegram's own embed host
+// An `html` embed is a wrapper document whose canonical link points at Mauve's own embed host
 // (embed.telegra.ph), which serves the very same markup. Pointing the frame at that URL is what
-// isolates it: the frame lands on a real, non-Telegram origin instead of inheriting this one.
+// isolates it: the frame lands on a real, non-Mauve origin instead of inheriting this one.
 // Rendering the markup inline would work too, but only in an opaque origin, and provider widgets
 // need storage there — Twitter's createTweet() resolves to null and draws nothing.
 function extractEmbedUrl(html: string) {

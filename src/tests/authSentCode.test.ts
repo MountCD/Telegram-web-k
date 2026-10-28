@@ -52,7 +52,7 @@ describe('auth sentCode routing', () => {
       {_: 'auth.sentCodeTypeFirebaseSms', length: 6},
       {_: 'auth.sentCodeTypeFragmentSms', url: 'https://fragment.com', length: 8},
       {_: 'auth.sentCodeTypeEmailCode', pFlags: {}, email_pattern: 'a**@b.com', length: 6},
-      {_: 'auth.sentCodeTypeSmsWord', beginning: 'Tele'},
+      {_: 'auth.sentCodeTypeSmsWord', beginning: 'Mau'},
       {_: 'auth.sentCodeTypeSmsPhrase'}
     ];
 
@@ -87,11 +87,11 @@ describe('auth sentCode input shape', () => {
 
   it('takes the number of boxes from the type, or falls back', () => {
     expect(getCodeLength({_: 'auth.sentCodeTypeMissedCall', prefix: '+99', length: 4})).toBe(4);
-    expect(getCodeLength({_: 'auth.sentCodeTypeSmsWord', beginning: 'Tele'})).toBe(5);
+    expect(getCodeLength({_: 'auth.sentCodeTypeSmsWord', beginning: 'Mau'})).toBe(5);
   });
 
   it('reads the disclosed beginning only off the word types', () => {
-    expect(getCodeBeginning({_: 'auth.sentCodeTypeSmsWord', beginning: 'Tele'})).toBe('Tele');
+    expect(getCodeBeginning({_: 'auth.sentCodeTypeSmsWord', beginning: 'Mau'})).toBe('Mau');
     expect(getCodeBeginning({_: 'auth.sentCodeTypeSmsPhrase'})).toBeUndefined();
     expect(getCodeBeginning({_: 'auth.sentCodeTypeSms', length: 5})).toBeUndefined();
   });
@@ -113,20 +113,20 @@ describe('secret word validation', () => {
   });
 
   it('accepts a prefix of the beginning, and the full word after it', () => {
-    expect(beginsOk('', 'Telegram')).toBe(true);
-    expect(beginsOk('Tel', 'Telegram')).toBe(true);
-    expect(beginsOk('Telegram', 'Telegram')).toBe(true);
+    expect(beginsOk('', 'Mauve')).toBe(true);
+    expect(beginsOk('Mau', 'Mauve')).toBe(true);
+    expect(beginsOk('Mauve', 'Mauve')).toBe(true);
     // the beginning is only the start — the rest of the secret is unknown
     expect(beginsOk('Telegraphy', 'Telegr')).toBe(true);
   });
 
   it('ignores case and leading whitespace', () => {
-    expect(beginsOk('  tELe', 'Telegram')).toBe(true);
+    expect(beginsOk('  mAu', 'Mauve')).toBe(true);
   });
 
   it('rejects a word that starts differently', () => {
-    expect(beginsOk('Wrong', 'Telegram')).toBe(false);
-    expect(beginsOk('Tolegram', 'Telegram')).toBe(false);
+    expect(beginsOk('Wrong', 'Mauve')).toBe(false);
+    expect(beginsOk('Tolegram', 'Mauve')).toBe(false);
   });
 });
 

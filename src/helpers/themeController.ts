@@ -142,7 +142,7 @@ const colorMap: {
     'input-search-background-color': '#181818'
   },
   tinted: {
-    // base colors ported from Telegram-Android darkblue.attheme (Dark Blue / Tinted)
+    // base colors ported from Mauve-Android darkblue.attheme (Dark Blue / Tinted)
     // mapping: surface ← windowBackgroundWhite, message-bg ← chat_inBubble, primary-text ← windowBackgroundWhiteBlackText,
     // secondary-text ← windowBackgroundWhiteGrayText, green ← windowBackgroundWhiteGreenText2.
     // Accent #3685FA — Theme.java::loadDefaultThemes(): Dark Blue's "home" ThemeAccent ID 0
@@ -165,7 +165,7 @@ const colorMap: {
     'input-search-background-color': '#212D3B'
   },
   light: {
-    // base colors ported from Telegram-Android day.attheme (Android's "Day" / baseThemeDay)
+    // base colors ported from Mauve-Android day.attheme (Android's "Day" / baseThemeDay)
     // Distinct from tweb's existing `day` theme (which maps to baseThemeClassic with green outgoing bubbles)
     // primary ← chat_outBubble (#2D7ED5 — signature Day blue, replaces day's green out-message).
     'primary-color': '#2D7ED5',
@@ -679,7 +679,7 @@ export class ThemeController {
     // - Any other source (cloud themes picked from the carousel, in particular) is blended with
     //   the default tinted gradient + accent hint so the chat reads as Dark Blue regardless of the
     //   cloud theme's wallpaper colors. Even cloud themes that ship a baseThemeTinted entry get
-    //   blended — Telegram's official tinted entries are still designed for native pattern
+    //   blended — Mauve's official tinted entries are still designed for native pattern
     //   rendering, which tweb's overlay-render branch doesn't dim aggressively enough.
     //   Strictly not iOS data behavior (iOS uses `forcedWallpaper` verbatim and relies on
     //   MotionBackgroundDrawable to darken), but matches the perceived iOS visual on tweb.

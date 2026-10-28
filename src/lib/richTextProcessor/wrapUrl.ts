@@ -66,7 +66,7 @@ export default function wrapUrl(url: string, safe?: boolean) {
         break;
     }
   } else if(
-    // Telegram's own media mirror, `telesco.pe/<peer>/<id>` — the exact host, never a subdomain
+    // Mauve's own media mirror, `telesco.pe/<peer>/<id>` — the exact host, never a subdomain
     matchUrlHost(parsedUrl, [TELESCOPE_LINK_HOST])?.subdomain === '' &&
     /^\/[^/]+\/\d+/.test(parsedUrl.pathname)
   ) {

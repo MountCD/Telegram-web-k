@@ -232,7 +232,7 @@ defineStories('Composer & bots', [
     }
   },
   {
-    // A local document tests the iframe chrome without booting another Telegram client.
+    // A local document tests the iframe chrome without booting another Mauve client.
     id: 'webApp/miniApp',
     fixtureOnly: true,
     title: 'Mini app',

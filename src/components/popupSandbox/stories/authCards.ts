@@ -101,7 +101,7 @@ defineStories('SIGN IN', [
   },
   {
     id: 'auth/codeApp',
-    title: 'Code sent in Telegram',
+    title: 'Code sent in Mauve',
     surface,
     fixtureOnly: true,
     managers,
@@ -122,7 +122,7 @@ defineStories('SIGN IN', [
     fixtureOnly: true,
     managers,
     // `beginning` is what the field validates against before spending a server attempt
-    open: code({_: 'auth.sentCodeTypeSmsWord', beginning: 'Tele'}, {next_type: {_: 'auth.codeTypeSms'}, timeout: 10})
+    open: code({_: 'auth.sentCodeTypeSmsWord', beginning: 'Mau'}, {next_type: {_: 'auth.codeTypeSms'}, timeout: 10})
   },
   {
     id: 'auth/codePhrase',

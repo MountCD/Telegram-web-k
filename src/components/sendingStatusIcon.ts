@@ -9,7 +9,7 @@
  * was comes in the same way, alone. A status asked for while a change plays follows once it is over,
  * from where it ended — cut short, the icon would jump to where it was going — so the clock of a message
  * confirmed at once is still seen to come and go. While a message is being sent the clock's hands go
- * round, the minute hand once in 1.5 s and the hour hand in 4.5 s, as in Telegram for Android
+ * round, the minute hand once in 1.5 s and the hour hand in 4.5 s, as in Mauve for Android
  * (MsgClockDrawable).
  *
  * What it costs: at rest, what the glyph cost — the span with the glyph in it. The glyph keeps the box

@@ -176,7 +176,7 @@ test.describe('switching accounts over open screens', () => {
       await page.locator('.btn-menu-item', {hasText: 'Settings'}).first().click();
       await expect(page.locator('.popup:has(.sidebar-slider)')).toBeVisible();
       await page.locator('.row', {hasText: 'Notifications and Sounds'}).first().click();
-      await page.locator('.row', {hasText: 'Contact joined Telegram'}).first().click();
+      await page.locator('.row', {hasText: 'Contact joined Mauve'}).first().click();
 
       await page.evaluate(() => (window as any).switchAccount(2));
       await waitForChatList(page);

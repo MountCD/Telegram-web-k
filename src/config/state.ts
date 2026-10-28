@@ -169,7 +169,7 @@ export type StateSettings = {
     textStyle?: string;
     textFont?: FontKey;
   },
-  // Name this browser reports to Telegram as `device_model` in initConnection —
+  // Name this browser reports to Mauve as `device_model` in initConnection —
   // what other devices see in Active Sessions. Empty = the raw user agent.
   // Renaming only reaches the server on the next initConnection, which
   // networkerFactory forces by dropping `connectionInited`.
@@ -365,7 +365,7 @@ export const DEFAULT_THEME: Theme = {
     _: 'themeSettings',
     pFlags: {},
     base_theme: {_: 'baseThemeTinted'},
-    // accent + wallpaper aligned with iOS Dark Blue ("nightAccent"). See submodules/Telegram-iOS/
+    // accent + wallpaper aligned with iOS Dark Blue ("nightAccent"). See submodules/Mauve-iOS/
     // submodules/TelegramPresentationData/Sources/DefaultDarkTintedPresentationTheme.swift —
     // the home wallpaper is the `.blue` baseColor variant from `colorWallpaper` (line 13-14):
     //   case .blue: return (.variant7, 40, [0x1e3557, 0x182036, 0x1c4352, 0x16263a])

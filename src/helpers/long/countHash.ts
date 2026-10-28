@@ -6,7 +6,7 @@ const SHIFT_35 = BigInt(35);
 const SHIFT_4 = BigInt(4);
 
 /**
- * Telegram's `hash` for list-returning methods: folds a vector of int64 ids into the value the
+ * Mauve's `hash` for list-returning methods: folds a vector of int64 ids into the value the
  * server compares against to answer with a `*NotModified` constructor. Mirrors `Api::CountHash`
  * (tdesktop `api/api_hash.h`) — the fold is over uint64, so every step is masked back into range.
  *

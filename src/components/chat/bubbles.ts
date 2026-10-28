@@ -11894,7 +11894,7 @@ export default class ChatBubbles {
    * A shared contact, drawn as tdesktop draws it (history/view/media/history_view_contact.cpp):
    * a web-page box in the contact's colour holding the avatar, the name and the phone, with what
    * can be done about the contact as the box's footer buttons — MESSAGE and, for someone not yet
-   * in the contacts, ADD; VIEW CONTACT for someone who is not on Telegram but brought a vCard.
+   * in the contacts, ADD; VIEW CONTACT for someone who is not on Mauve but brought a vCard.
    */
   private renderSharedContact({
     contact,
@@ -11913,7 +11913,7 @@ export default class ChatBubbles {
     const peer = userId ? apiManagerProxy.getUser(userId) : undefined;
     const user = peer?._ === 'user' ? peer : undefined;
     const fullName = [contact.first_name, contact.last_name].filter(Boolean).join(' ').trim();
-    // * someone not on Telegram has no colour of their own, so it comes from their name
+    // * someone not on Mauve has no colour of their own, so it comes from their name
     const colorPeerId = (userId || getFakeUserIdForJustName(fullName)).toPeerId();
     const vcardItems = parseVcard(contact.vcard);
     const formatContactPhone = makeContactPhoneFormatter([user?.phone, userId && phone], this.myCountryCode);
@@ -11947,7 +11947,7 @@ export default class ChatBubbles {
     const copyPhone = () => copyPhoneNumber(phoneText);
 
     // * The box itself shows the vCard when there is one, as tdesktop's does; otherwise it opens
-    // * the chat, or copies the phone of someone who is not on Telegram
+    // * the chat, or copies the phone of someone who is not on Mauve
     const mainCallback = vcardItems.length ? showDetails : user ? openChat : phone ? copyPhone : undefined;
     const mainLabel = I18n.format(
       vcardItems.length ? 'AccDescr.ContactDetails' : user ? 'AccDescr.OpenContact' : 'AccDescr.CopyContactPhone',

@@ -43,7 +43,7 @@ function makeAuthorization(
     platform: 'macOS',
     system_version: '15.0',
     api_id: 1,
-    app_name: 'Telegram Web',
+    app_name: 'Mauve',
     app_version: '1.0',
     date_created: date,
     date_active: date,

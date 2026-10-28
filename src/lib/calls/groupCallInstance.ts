@@ -589,7 +589,7 @@ export default class GroupCallInstance extends CallInstanceBase<{
   /**
    * Buffer the identity-checked chain slices returned by the accepted join RPC.
    * Unlike an arbitrary push, that response is authoritative for the initial
-   * verification cursor and may contain only Telegram's retained tail.
+   * verification cursor and may contain only Mauve's retained tail.
    */
   public deliverAcceptedE2eJoinChainBlocks(
     subChainId: number,
@@ -1458,7 +1458,7 @@ export default class GroupCallInstance extends CallInstanceBase<{
     if(requestedOffset !== undefined) {
       const firstOffset = nextOffset - blocks.length;
       // The verification broadcast chain is an append-only mailbox, not the
-      // authenticated main blockchain. Telegram may compact its old broadcasts
+      // authenticated main blockchain. Mauve may compact its old broadcasts
       // and answer the very first offset=0 poll with the retained tail, so its
       // `next_offset` can be much larger than `blocks.length`. Official clients
       // anchor that first response at `next_offset - blocks.length`; rejecting
@@ -1727,7 +1727,7 @@ export default class GroupCallInstance extends CallInstanceBase<{
     // frame is authentic, the attribution is not. Move both together.
     if(current !== undefined) {
       // Look the entry up by the RAW source. `entriesBySource` is keyed by the
-      // signed int32 Telegram sends, while this map is keyed unsigned (the recv
+      // signed int32 Mauve sends, while this map is keyed unsigned (the recv
       // transform reads an unsigned SSRC off the frame metadata). Normalising
       // before the lookup missed every source with the high bit set, so the
       // rebind below silently never ran for half the SSRC space.
@@ -2240,7 +2240,7 @@ export default class GroupCallInstance extends CallInstanceBase<{
 
   /**
    * Remember how a remote participant is to be heard and apply it to every
-   * audio element of theirs. Telegram's volume goes up to 200%; an element
+   * audio element of theirs. Mauve's volume goes up to 200%; an element
    * cannot amplify, so anything above 100% plays at 100% (Web Audio gain would
    * take remote WebRTC audio out of the element path Chromium's echo canceller
    * uses as its reference).
@@ -3599,9 +3599,9 @@ export default class GroupCallInstance extends CallInstanceBase<{
     });
 
     // For e2e conferences: map every SFU SSRC for this participant to their
-    // Telegram user_id so recv RTCRtpScriptTransform handlers can look up
+    // Mauve user_id so recv RTCRtpScriptTransform handlers can look up
     // the correct Ed25519 public key for signature verification. The
-    // TdE2E "user_id" IS the Telegram user_id — same value namespace.
+    // TdE2E "user_id" IS the Mauve user_id — same value namespace.
     if(this.e2e && participant.peer?._ === 'peerUser') {
       const userId = BigInt(participant.peer.user_id);
       if(hasLeft) {
@@ -3632,7 +3632,7 @@ export default class GroupCallInstance extends CallInstanceBase<{
         ssrcs = ssrcs.filter((ssrc) => this.registerE2eUserSsrcGroup(userId, ssrc));
       }
     } else if(this.e2e && !hasLeft && ssrcs.length) {
-      // A conference frame can only be authenticated against a Telegram user
+      // A conference frame can only be authenticated against a Mauve user
       // from the e2e group state. Do not allocate decoders for an identity that
       // cannot ever be installed in the worker's SSRC map.
       this.reportConferenceBug('the call server announced conference media for a non-user peer', {peerId});

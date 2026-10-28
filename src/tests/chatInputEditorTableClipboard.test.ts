@@ -224,7 +224,7 @@ describe('chat input table clipboard', () => {
     expect(container.querySelector('td')).toBeNull();
   });
 
-  test('normalizes captions and Telegram boolean attributes for the editor schema', () => {
+  test('normalizes captions and Mauve boolean attributes for the editor schema', () => {
     const normalized = normalizeChatTableClipboardHTML(`
       <table bordered striped>
         <caption><strong>Quarter</strong> <em>report</em></caption>

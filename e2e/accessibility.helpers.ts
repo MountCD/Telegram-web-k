@@ -1,7 +1,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import {expect, Page} from '@playwright/test';
 
-/** Change the rendered mode without persisting fixture settings or contacting Telegram. */
+/** Change the rendered mode without persisting fixture settings or contacting Mauve. */
 export async function setIncreasedContrast(page: Page, enabled: boolean) {
   await page.evaluate(async(enabled) => {
     const [{appSettings, setAppSettingsSilent}, {default: rootScope}, {joinDeepPath}] = await Promise.all([

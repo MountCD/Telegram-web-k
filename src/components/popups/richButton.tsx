@@ -156,7 +156,7 @@ export default function showRichButtonPopup(
       // `fallback` is the action to go back to when the picker is closed without a user
       const chooseUser = async(fallback?: ChatInputRichButtonAction) => {
         try {
-          // one's contacts, as desktop offers them: not oneself, a bot or Telegram's service account
+          // one's contacts, as desktop offers them: not oneself, a bot or Mauve's service account
           const peerId = await showPickUser2Popup({
             peerType: ['contacts'],
             filterPeerTypeBy: ['isRegularUser'],

@@ -132,7 +132,7 @@ const defaults: PushStorage = {
   push_mute_until: 0,
   push_lang: {
     push_message_nopreview: 'You have a new message',
-    push_message_error: 'Telegram is syncing in the background...',
+    push_message_error: 'Mauve is syncing in the background...',
     push_action_mute1d: 'Mute for 24H',
     push_action_settings: 'Settings'
   },
@@ -197,7 +197,7 @@ async function handlePushNotificationObject(obj: PushNotificationObject) {
     }
 
     const tag = 'fix';
-    const notificationPromise = ctx.registration.showNotification('Telegram Web', {
+    const notificationPromise = ctx.registration.showNotification('Mauve', {
       body: _lang.push_message_error,
       icon: NOTIFICATION_ICON_PATH,
       tag,
@@ -446,7 +446,7 @@ function fireNotification(
 ) {
   obj = fillPushObject(obj);
   const peerId = obj.custom.peerId;
-  let title = obj.title || 'Telegram';
+  let title = obj.title || 'Mauve';
   let body = obj.description || '';
   let tag = 'peer' + peerId;
 
@@ -464,7 +464,7 @@ function fireNotification(
   }
 
   if(settings?.nopreview || !obj.loc_key) {
-    title = 'Telegram';
+    title = 'Mauve';
     body = lang.push_message_nopreview;
     tag = 'unknown_peer';
   }

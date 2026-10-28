@@ -222,9 +222,9 @@ describe('active sessions tab', () => {
   it('splits the current session from the rest and gives every row its platform icon', () => {
     const container = mount({
       authorizations: [
-        makeAuthorization({hash: 0, pFlags: {current: true}, api_id: 1025907, app_name: 'Telegram WebK', app_version: '2.2'}),
+        makeAuthorization({hash: 0, pFlags: {current: true}, api_id: 1025907, app_name: 'Mauve WebK', app_version: '2.2'}),
         makeAuthorization({hash: 2, platform: 'Windows'}),
-        makeAuthorization({hash: 3, api_id: 6, app_name: 'Telegram Android', device_model: 'Pixel 8', platform: 'Android'})
+        makeAuthorization({hash: 3, api_id: 6, app_name: 'Mauve Android', device_model: 'Pixel 8', platform: 'Android'})
       ]
     });
 
@@ -245,12 +245,12 @@ describe('active sessions tab', () => {
   });
 
   it('opens the session tab on click and terminates through the payload callback', async() => {
-    const other = makeAuthorization({hash: 2, app_name: 'Telegram iOS', api_id: 1, device_model: 'iPhone 15'});
+    const other = makeAuthorization({hash: 2, app_name: 'Mauve iOS', api_id: 1, device_model: 'iPhone 15'});
     const container = mount({
       authorizations: [makeAuthorization({hash: 0, pFlags: {current: true}}), other]
     });
 
-    rowByTitle(container, 'Telegram iOS').click();
+    rowByTitle(container, 'Mauve iOS').click();
     expect(mocks.createTab).toHaveBeenCalledOnce();
     const payload = mocks.openTab.mock.calls[0][0];
     expect(payload.authorization).toBe(other);
@@ -381,8 +381,8 @@ describe('active sessions tab', () => {
     const container = mount({
       authorizations: [
         makeAuthorization({hash: 0, pFlags: {current: true}}),
-        makeAuthorization({hash: 2, pFlags: {password_pending: true}, app_name: 'Telegram iOS'}),
-        makeAuthorization({hash: 3, app_name: 'Telegram Android'})
+        makeAuthorization({hash: 2, pFlags: {password_pending: true}, app_name: 'Mauve iOS'}),
+        makeAuthorization({hash: 3, app_name: 'Mauve Android'})
       ]
     });
 
@@ -393,8 +393,8 @@ describe('active sessions tab', () => {
       'OtherSessions'
     ]);
     expect(sections[1].querySelectorAll('.row').length).toBe(1);
-    expect(sections[1].querySelector('.row-title').textContent).toContain('Telegram iOS');
-    expect(sections[2].querySelector('.row-title').textContent).toContain('Telegram Android');
+    expect(sections[1].querySelector('.row-title').textContent).toContain('Mauve iOS');
+    expect(sections[2].querySelector('.row-title').textContent).toContain('Mauve Android');
     // an incomplete attempt is still worth terminating
     expect(container.querySelector('.btn')).not.toBeNull();
   });
@@ -480,7 +480,7 @@ describe('active sessions tab', () => {
     mocks.getAuthorizations.mockResolvedValue({
       authorizations: [
         makeAuthorization({hash: 0, pFlags: {current: true}}),
-        makeAuthorization({hash: 9, app_name: 'Telegram Android'})
+        makeAuthorization({hash: 9, app_name: 'Mauve Android'})
       ],
       authorization_ttl_days: 90
     });

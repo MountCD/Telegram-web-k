@@ -12279,7 +12279,7 @@ export class AppMessagesManager extends AppManager {
         id: fromId,
         pFlags: {verified: true},
         access_hash: '0',
-        first_name: 'Telegram',
+        first_name: 'Mauve',
         phone: '42777'
       }]);
     }

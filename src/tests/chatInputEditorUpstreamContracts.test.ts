@@ -503,13 +503,13 @@ describe('upstream editor behavior through the tweb schema', () => {
     '| code |\n| --- |\n| `a || b` |',
     'hello $$$x^2$$$', '$x$ and $$$y$$$', '```js\n<x>\n```',
     '**bold** and _italic_', 'a. alpha\nb. beta',
-    // a list is rich-only: list markers in Telegram text stay its lines
+    // a list is rich-only: list markers in Mauve text stay its lines
     '- [ ] parent\n  - [ ] checkbox child\n  - plain child',
     '- [ ] parent\n  - [ ] level2\n    - [ ] level3\n    - deep plain',
     '- [ ] parent\n  - plain first\n  - [ ] checkbox after',
     '- [ ] parent\n  - [ ] child 1\n  - [x] child 2',
     '1. one\n2. two\n- bullet'
-  ])('Telegram text preserves literal syntax without CommonMark parsing: %s', (value) => {
+  ])('Mauve text preserves literal syntax without CommonMark parsing: %s', (value) => {
     const result = setup([paragraph()]);
     result.editor.setTextWithEntities(value);
     expect(result.editor.getRichValue(true, false).value).toBe(value);
@@ -536,7 +536,7 @@ describe('upstream editor behavior through the tweb schema', () => {
     {content: [paragraph(' a ')], empty: false},
     {content: [{type: 'blockMath', attrs: {source: 'x'}}], empty: false},
     {content: [{type: 'blockMath', attrs: {source: ' '}}], empty: true}
-  ])('isEmpty follows the Telegram send contract for $content', ({content, empty}) => {
+  ])('isEmpty follows the Mauve send contract for $content', ({content, empty}) => {
     const result = setup(content);
     expect(result.editor.isEmpty()).toBe(empty);
     const before = result.editor.getDocument();

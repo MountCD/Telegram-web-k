@@ -118,7 +118,7 @@ expansion frame; without it the component creates its own layout.
 | Media and map node views | `extensions/media.ts`, `map.ts` |
 | Upload preparation and history | `prepareRichMediaUpload.ts`, `mediaUploadHistory.ts`, `reconcileUploads.ts` |
 | Shared preview URL ownership | `mediaPreviewUrl.ts` |
-| Document and Telegram conversion | `model.ts`, `richMessage.ts` |
+| Document and Mauve conversion | `model.ts`, `richMessage.ts` |
 | Remote draft application | `ChatInput` in `../input.ts` |
 
 `extensions.ts` lists the upstream extensions and composes them with this
@@ -155,7 +155,7 @@ from becoming a link while still admitting the relative hrefs upstream allowed;
 - Backspace after media enters its caption. An authored empty paragraph is
   removed; the technical final placeholder remains. Keyboard, `beforeinput`
   and the virtual keyboard must agree, including caret and Undo/Redo.
-- Plain-compatible text uses Telegram text/entities. Rich-only blocks and
+- Plain-compatible text uses Mauve text/entities. Rich-only blocks and
   marks use the native rich-message representation. Mode changes preserve
   authored quotes, offsets and history.
 - A list is rich-only, as in the official clients: entities have no list, and
@@ -165,7 +165,7 @@ from becoming a link while still admitting the relative hrefs upstream allowed;
   runs on the plain schema, as a caption does, and only the expanded editor —
   or a rich draft already in the field — makes lists and the formatting only a
   rich message carries (`RichMessageInput`'s `canSendRich`). The other way
-  round, Telegram text never becomes a list — a plain draft or a plain message
+  round, Mauve text never becomes a list — a plain draft or a plain message
   being edited keeps its `1. ` lines as text, and so does every plain field. A
   rich list sent without formatting is written out with the same markers.
 - Tables have an explicit title/wrapper and preserve rectangular selections.

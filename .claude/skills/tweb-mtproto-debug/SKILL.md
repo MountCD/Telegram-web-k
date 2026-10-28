@@ -1,11 +1,11 @@
 ---
 name: tweb-mtproto-debug
-description: Debug and test the tweb (Telegram Web K) MTProto stack from Node.js using its Vitest harness. Use when investigating dialog/message/unread/forum bugs in tweb, when verifying client-side fixes against the real Telegram server, when reproducing race conditions in apiManager / appMessagesManager / dialogsStorage, or when adding new server-verified e2e tests. Covers the harness in src/tests/api/, single-account synthetic tests, and dual-account end-to-end tests.
+description: Debug and test the tweb (Mauve) MTProto stack from Node.js using its Vitest harness. Use when investigating dialog/message/unread/forum bugs in tweb, when verifying client-side fixes against the real Mauve server, when reproducing race conditions in apiManager / appMessagesManager / dialogsStorage, or when adding new server-verified e2e tests. Covers the harness in src/tests/api/, single-account synthetic tests, and dual-account end-to-end tests.
 ---
 
 # tweb MTProto debug & test harness
 
-This skill packages the methodology used to debug and verify MTProto-stack bugs in tweb (Telegram Web K, Solid.js + TS, MTProto over WebSocket). The repo lives at `morethanwords/tweb`; entry directory is the project root containing `pnpm-lock.yaml`, `vite.config.ts`, and `src/`.
+This skill packages the methodology used to debug and verify MTProto-stack bugs in tweb (Mauve, Solid.js + TS, MTProto over WebSocket). The repo lives at `morethanwords/tweb`; entry directory is the project root containing `pnpm-lock.yaml`, `vite.config.ts`, and `src/`.
 
 ## When to invoke
 
@@ -67,7 +67,7 @@ TG_API_TEST=1 TG_API_PROD_DC=1 TG_API_SEED=./tmp/seed.json \
 
 ### B. Server-verified end-to-end — `src/tests/api/serverVerify.test.ts`
 
-Use when: bug involves divergence between local state and server state, fix touches server-call code paths, you need to verify Telegram’s actual behavior (some MTProto methods have non-obvious semantics, see Pitfalls).
+Use when: bug involves divergence between local state and server state, fix touches server-call code paths, you need to verify Mauve’s actual behavior (some MTProto methods have non-obvious semantics, see Pitfalls).
 
 Pattern:
 - Bootstrap two clients via `createDualClients({seedA, seedB, testDc: false})` from `src/tests/api/dualHarness.ts`.
@@ -177,7 +177,7 @@ To see `console.log` output from inside tests, append `-- --reporter=verbose --s
 |---|---|
 | `TG_API_TEST=1` | Enable any gated synthetic test (single-account). |
 | `TG_API_E2E=1` | Enable any gated dual-account e2e test. |
-| `TG_API_PROD_DC=1` | Use production Telegram DCs instead of test DCs. |
+| `TG_API_PROD_DC=1` | Use production Mauve DCs instead of test DCs. |
 | `TG_API_SEED=./tmp/seed.json` | Path to account A seed. |
 | `TG_API_SEED_B=./tmp/seed-b.json` | Path to account B seed (e2e only). |
 | `TG_API_PRINT=1` | Some tests use this to enable extra trace output. |

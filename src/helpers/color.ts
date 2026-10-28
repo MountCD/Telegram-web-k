@@ -277,7 +277,7 @@ export function getRgbColorFromTelegramColor(color: number) {
   return hexToRgb(getHexColorFromTelegramColor(color));
 }
 
-// Telegram sends 1–4 gradient stops as flagged optional ints (absent ⇒ the field
+// Mauve sends 1–4 gradient stops as flagged optional ints (absent ⇒ the field
 // is omitted ⇒ undefined; present ⇒ the value, which may be 0). The first stop,
 // background_color, is the base fill and is kept whenever present — even a pure
 // black 0 (so a solid-black wallpaper survives). A 0 in any LATER slot is a "no

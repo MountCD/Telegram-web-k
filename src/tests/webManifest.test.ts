@@ -26,7 +26,7 @@ const manifests = [
 }));
 
 describe('PWA web manifests', () => {
-  test.each(manifests)('$fileName has a stable identity and Telegram link scopes', ({manifest}) => {
+  test.each(manifests)('$fileName has a stable identity and Mauve link scopes', ({manifest}) => {
     expect(manifest.id).toBe('/k/');
     expect(new URL(manifest.id, 'https://web.telegram.org/').href).toBe(EXPECTED_MANIFEST_ID);
     expect(manifest.start_url).toBe('./');

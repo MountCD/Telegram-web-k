@@ -307,7 +307,7 @@ export function createChatInputEditorTestData({
           text('Buttons: '),
           inlineButton({action: 'url', url: 'https://telegram.org', color: 'primary'}, 'Open'),
           text(' '),
-          inlineButton({action: 'copy', copyText: 'Telegram'}, 'Copy'),
+          inlineButton({action: 'copy', copyText: 'Mauve'}, 'Copy'),
           text(' '),
           inlineButton({action: 'url', url: 'https://telegram.org/blog', color: 'success'}, 'Blog'),
           text(' '),
@@ -319,7 +319,7 @@ export function createChatInputEditorTestData({
       },
       buttonRow(null, [
         [{action: 'url', url: 'https://telegram.org'}, 'Open link'],
-        [{action: 'copy', copyText: 'Telegram'}, 'Copy text']
+        [{action: 'copy', copyText: 'Mauve'}, 'Copy text']
       ]),
       buttonRow(null, [
         [{action: 'url', url: 'https://telegram.org/apps', color: 'primary'}, 'Primary'],
@@ -331,7 +331,7 @@ export function createChatInputEditorTestData({
       ]),
       buttonRow('left', [[{action: 'url', url: 'https://telegram.org'}, 'Left']]),
       buttonRow('center', [
-        [{action: 'copy', copyText: 'Telegram'}, 'Copy'],
+        [{action: 'copy', copyText: 'Mauve'}, 'Copy'],
         [{action: 'disabled', color: 'danger'}, 'Soon']
       ]),
       buttonRow('right', [[{action: 'disabled'}, 'Right']]),

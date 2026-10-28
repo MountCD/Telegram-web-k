@@ -30,7 +30,7 @@ describe('Tiptap chat input editor: Core', () => {
     expect(input.dataset.chatInputEditor).toBeUndefined();
   });
 
-  test('round-trips Telegram text and entities', () => {
+  test('round-trips Mauve text and entities', () => {
     const {editor} = mountEditor();
     const text = 'bold spoiler link date\nquoted\nconst answer = 42;';
     const entities: MessageEntity[] = [

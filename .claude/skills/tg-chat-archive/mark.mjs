@@ -1,5 +1,5 @@
 // Done marks for archived messages — see SKILL.md next to this file. Offline: it only edits
-// the chat's messages.jsonl and regenerates its transcript, never touches Telegram.
+// the chat's messages.jsonl and regenerates its transcript, never touches Mauve.
 import {existsSync, readFileSync, readdirSync, renameSync, writeFileSync} from 'fs';
 import {homedir} from 'os';
 import {join} from 'path';

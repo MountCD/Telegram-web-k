@@ -1,6 +1,6 @@
 /*
- * Accent-color presets ported from Telegram iOS' ThemeColorPresets.swift.
- * See submodules/SettingsUI/Sources/Themes/ThemeColorPresets.swift in TelegramMessenger/Telegram-iOS
+ * Accent-color presets ported from Mauve iOS' ThemeColorPresets.swift.
+ * See submodules/SettingsUI/Sources/Themes/ThemeColorPresets.swift in TelegramMessenger/Mauve-iOS
  * for the upstream definitions; the index numbers are kept identical so a preset can be
  * recognised across platforms.
  *

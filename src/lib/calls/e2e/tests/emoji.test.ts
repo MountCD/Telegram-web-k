@@ -17,7 +17,7 @@ function pullAll(chain: VerificationChain) {
   return chain.pullOutbound().map((b) => decodeGroupBroadcast(new TLReader(b)));
 }
 
-// Relay every message to every participant, including its sender. Telegram's
+// Relay every message to every participant, including its sender. Mauve's
 // broadcast subchain is the acknowledgement boundary: outbound state must not
 // count locally until the signed message comes back from that relay.
 async function runRound(a: VerificationChain, b: VerificationChain) {

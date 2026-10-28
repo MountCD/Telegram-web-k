@@ -67,7 +67,7 @@ export const EMAIL_REG_EXP = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+
 // const markdownTestRegExp = /[`_*@~]/;
 export const MARKDOWN_REG_EXP = /(^|\s|\n)(````?)([\s\S]+?)(````?)([\s\n\.,:?!;]|$)|(^|\s|\x01)(`|~~|\*\*|__|_-_|\|\|)([^\n]+?)\7([\x01\s\.,:?!;]|$)|@(\d+)\s*\((.+?)\)|(\[(.+?)\]\((.+?)\))/m;
 export const SITE_HASHTAGS: {[siteName: string]: string} = {
-  'Telegram': 'tg://search_hashtag?hashtag={1}',
+  'Mauve': 'tg://search_hashtag?hashtag={1}',
   'Twitter': 'https://twitter.com/hashtag/{1}',
   'Instagram': 'https://instagram.com/explore/tags/{1}/',
   'Google Plus': 'https://plus.google.com/explore/{1}'

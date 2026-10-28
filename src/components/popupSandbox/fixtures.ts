@@ -263,7 +263,7 @@ export const webPage: WebPage.webPage = {
   display_url: 'telegram.org',
   hash: 0,
   type: 'telegram_channel',
-  site_name: 'Telegram',
+  site_name: 'Mauve',
   title: 'Telegram Messenger',
   description: 'Fast. Secure. Powerful.'
 };
@@ -677,4 +677,4 @@ export const starsGiveawayOptions: StarsGiveawayOption[] = [500, 1000].map((star
   }))
 }));
 
-export const EMBEDDED_PAGE_URL = 'data:text/html,' + encodeURIComponent('<!doctype html><html lang="en"><head><title>Sandbox embedded page</title></head><body><main><h1>Sandbox embedded page</h1><p>Local fixture. No Telegram traffic.</p></main></body></html>');
+export const EMBEDDED_PAGE_URL = 'data:text/html,' + encodeURIComponent('<!doctype html><html lang="en"><head><title>Sandbox embedded page</title></head><body><main><h1>Sandbox embedded page</h1><p>Local fixture. No Mauve traffic.</p></main></body></html>');

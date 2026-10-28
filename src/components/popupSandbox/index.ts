@@ -3,7 +3,7 @@
  *
  * Two ways in:
  *  - `?popups=1` on a dev/preview build. `src/index.ts` hands over before the session, the MTProto
- *    connection and the auth flow are touched, so nothing reaches Telegram at all.
+ *    connection and the auth flow are touched, so nothing reaches Mauve at all.
  *  - `showPopupSandbox()` from anywhere inside a running app — including a signed-in one. The panel
  *    opens over the app and closing it puts the real managers back. Signed in, it offers a second
  *    data source: the session's own dialogs, messages and gifts, run against the real managers with

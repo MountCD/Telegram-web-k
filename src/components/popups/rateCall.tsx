@@ -90,7 +90,7 @@ export type RateCallPopupOptions = {
 };
 
 /**
- * "Please rate the quality of your Telegram call" — five stars, and below four a list of what went
+ * "Please rate the quality of your Mauve call" — five stars, and below four a list of what went
  * wrong plus an optional comment. Send rates the call; closing the popup any other way sends nothing.
  *
  * tdesktop and Android keep the choice and the sending apart (a Send button), unlike iOS and macOS,

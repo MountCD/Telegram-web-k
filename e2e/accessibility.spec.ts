@@ -28,7 +28,7 @@ test.describe(() => {
 
     await page.getByRole('button', {name: /log in by phone number/i}).click();
     await setIncreasedContrast(page, true);
-    await expect(page.getByRole('heading', {level: 1, name: 'Sign in to Telegram'})).toBeVisible();
+    await expect(page.getByRole('heading', {level: 1, name: 'Sign in to Mauve'})).toBeVisible();
     await expect(page.getByRole('textbox', {name: 'Phone Number'})).toBeVisible();
 
     await expectNoA11yViolations(page);

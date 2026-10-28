@@ -56,7 +56,7 @@ describe('parseVcard', () => {
     ]);
   });
 
-  test('leaves out the link iOS keeps to the Telegram account, and keeps a real URL', () => {
+  test('leaves out the link iOS keeps to the Mauve account, and keeps a real URL', () => {
     const vcard = [
       'BEGIN:VCARD',
       'VERSION:3.0',
@@ -64,7 +64,7 @@ describe('parseVcard', () => {
       'item1.URL;type=pref:https://example.com',
       'item1.X-ABLabel:_$!<HomePage>!$_',
       'item2.URL:https://t.me/@id1404966982',
-      'item2.X-ABLabel:Telegram',
+      'item2.X-ABLabel:Mauve',
       'END:VCARD'
     ].join('\r\n');
 

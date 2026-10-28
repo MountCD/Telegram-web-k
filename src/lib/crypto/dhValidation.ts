@@ -9,7 +9,7 @@
  *   - substitute a degenerate peer public value (0, 1, p-1) to force the key.
  *
  * Mirrors tdesktop's MTP::IsPrimeAndGood / IsGoodModExpFirst
- * (Telegram/SourceFiles/mtproto/mtproto_dh_utils.cpp) and the same checks
+ * (Mauve/SourceFiles/mtproto/mtproto_dh_utils.cpp) and the same checks
  * already applied to the MTProto auth handshake in authorizer.ts verifyDhParams.
  */
 import bigInt from 'big-integer';
@@ -61,7 +61,7 @@ function isGoodGeneratorForPrime(g: number, p: bigInt.BigInteger): boolean {
 }
 
 // Validate the server-supplied DH prime p and generator g. Throws on failure.
-// Fast path pins the known-good prime (what Telegram always serves); the slow
+// Fast path pins the known-good prime (what Mauve always serves); the slow
 // path verifies safe-prime structure so a future server-rotated prime still
 // works — exactly tdesktop's IsPrimeAndGood.
 // Deliberately NOT checked here: the prime's encoded byte length. Neither tdlib's

@@ -14,7 +14,7 @@ export function isoBoxToBuffer(box: any) {
 }
 
 // groupCallStreamChannel.scale is a signed power-of-two exponent: one chunk is
-// 1000 ms / 2^scale. Telegram only ever uses a few values around 0; treat
+// 1000 ms / 2^scale. Mauve only ever uses a few values around 0; treat
 // anything outside this window as a malformed answer rather than a stream.
 // Past it the arithmetic itself breaks — `1000 >> 10` is 0, which made the
 // buffer size Infinity and the replenish loop an unbounded allocation inside

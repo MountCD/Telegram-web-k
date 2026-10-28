@@ -25,7 +25,7 @@ describe('Tiptap chat input editor: Formatting', () => {
     expect(findEntity(richValue.entities, entityType)).toMatchObject({offset: 0, length: 6});
   });
 
-  test('applies links and dates with their Telegram attributes', () => {
+  test('applies links and dates with their Mauve attributes', () => {
     const linked = applyToText('link', {href: 'https://example.com/path'});
     expect(findEntity(linked.entities, 'messageEntityTextUrl')).toEqual({
       _: 'messageEntityTextUrl',

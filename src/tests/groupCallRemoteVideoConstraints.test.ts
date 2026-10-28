@@ -1,7 +1,7 @@
 /*
  * ReceiverVideoConstraints for legacy (SFU) group calls. The server decides how
  * many video participants it announces, so the request is bounded, and tiered
- * the way Telegram iOS asks (VideoChatParticipantsComponent): the pinned video
+ * the way Mauve iOS asks (VideoChatParticipantsComponent): the pinned video
  * at 720 with every other tile a 180 thumbnail, and 360 for everyone when
  * nothing is pinned. Only the full-quality endpoint is "on stage", like tgcalls.
  * A pin used to wait for the next 5 s resend before the SFU upgraded it.

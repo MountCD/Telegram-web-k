@@ -7,7 +7,7 @@ defineStories('Rich editor', [
     title: 'Create a link',
     open: async() => {
       const {default: showCreateLinkPopup} = await import('@components/popups/createLink');
-      void showCreateLinkPopup({text: 'Telegram', url: 'https://telegram.org'}).catch(noop);
+      void showCreateLinkPopup({text: 'Mauve', url: 'https://telegram.org'}).catch(noop);
     }
   },
   {
@@ -22,7 +22,7 @@ defineStories('Rich editor', [
       input.hidden = true;
       document.body.append(input);
       const editor = createEditor(input);
-      editor.setTextWithEntities('Telegram');
+      editor.setTextWithEntities('Mauve');
       editor.restoreSelection({from: 1, to: 9}, false);
       const cleanup = () => {
         editor.destroy();

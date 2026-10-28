@@ -374,7 +374,7 @@ export default class AppMediaViewerBase<
     buttonsDiv.classList.add(MEDIA_VIEWER_CLASSNAME + '-buttons');
 
     topButtons.concat(['download', 'rotate', 'zoomin', 'close']).forEach((name) => {
-      // The rotate button turns the image counterclockwise (matching Telegram
+      // The rotate button turns the image counterclockwise (matching Mauve
       // Desktop), so it carries the left-pointing glyph while keeping the plain
       // `rotate` key in this.buttons.
       const icon: Icon = name === 'rotate' ? 'rotate_left' : name as Icon;

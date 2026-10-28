@@ -13,7 +13,7 @@ const PARTS = Number(process.env.POPUP_STORY_PARTS) || 8;
  * Opens every popup the sandbox knows about and asserts it actually renders.
  *
  * The sandbox (`src/components/popupSandbox`, entered with `?popups=1`) answers every manager call
- * from local fixtures, so this needs no session, no authorization and no Telegram traffic — a plain
+ * from local fixtures, so this needs no session, no authorization and no Mauve traffic — a plain
  * dev server is enough. That makes it a cheap regression net over every popup in the app: one that
  * starts throwing on construction, or never reaches its visible state, fails here.
  *

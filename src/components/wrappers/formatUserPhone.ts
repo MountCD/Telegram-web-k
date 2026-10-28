@@ -12,7 +12,7 @@ export function formatSharedPhone(phone: string, defaultCountryCode?: string) {
   return (code ? '+' : '') + formatted;
 }
 
-// * How a shared contact's numbers read. A Telegram user's number is international: their own
+// * How a shared contact's numbers read. A Mauve user's number is international: their own
 // * when it is visible (Android shows "+" + user.phone), and the message's, which the server found
 // * the account by — as tdesktop reads it. Any other number can be a national one (#30681) and is
 // * read as one of the viewer's country; so is one with a trunk 0, which tdesktop leaves as it is

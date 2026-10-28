@@ -742,7 +742,7 @@ export class AppGroupCallsManager extends AppManager {
   }
 
   /**
-   * Resolve participant rows by an SSRC observed on the media path. Telegram
+   * Resolve participant rows by an SSRC observed on the media path. Mauve
    * transports SSRCs as signed int32 values, while WebRTC exposes an unsigned
    * synchronizationSource. The caller validates E2E membership before saving
    * any returned row into the participant cache.

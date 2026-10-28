@@ -730,7 +730,7 @@ describe('AppGroupCallsManager.createConferenceCall', () => {
 });
 
 describe('AppGroupCallsManager participant fetch generations and versions', () => {
-  it('resolves an unsigned WebRTC SSRC through the signed Telegram source filter', async() => {
+  it('resolves an unsigned WebRTC SSRC through the signed Mauve source filter', async() => {
     const id = 'source-resolution-call';
     const signedSource = -559038737;
     const participant = groupCallParticipant(42, signedSource);

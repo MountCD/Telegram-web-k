@@ -11,7 +11,7 @@ import A11yButton from '@components/a11yButton';
 import styles from '@components/chatTips/chatTips.module.scss';
 
 /**
- * The shared tip-card frame, after the macOS client's `WidgetView` (Telegram-Mac/WidgetView.swift):
+ * The shared tip-card frame, after the macOS client's `WidgetView` (Mauve-Mac/WidgetView.swift):
  * a fixed-size card holding four slots — title, a row of segmented buttons, the content, and a
  * description pinned to the bottom edge with a link into the matching settings screen.
  *

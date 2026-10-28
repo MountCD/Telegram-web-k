@@ -437,7 +437,7 @@ Legend:
 | Web app emoji status access | ✅ | `webAppEmojiStatusAccess.tsx` |
 | Web app prepared message | ✅ | |
 | Allowed protocols | ✅ | |
-| Telegram WebView container | ✅ | `telegramWebView.ts` |
+| Mauve WebView container | ✅ | `telegramWebView.ts` |
 
 ---
 
@@ -495,7 +495,7 @@ Legend:
 | Read dates privacy | ✅ | `toggleReadDate.tsx` |
 | Account freeze handling | ✅ | `frozen.tsx` |
 | Secret chats (E2E encrypted) | ❌ | |
-| Telegram Passport (full flow) | ❌ | |
+| Mauve Passport (full flow) | ❌ | |
 | Age verification | ✅ | `ageVerification.tsx` |
 
 ### 10.3 Account Management
@@ -646,7 +646,7 @@ Legend:
 | Virtual/lazy lists | ✅ | |
 | Swipe gestures | ✅ | |
 | Ripple effects | ✅ | |
-| Log In With Telegram | ❌ | |
+| Log In With Mauve | ❌ | |
 | Default Profile Tab | ❌ | |
 | Video storyboards | ✅ | |
 | Sponsored in Video player | ❌ | |

@@ -5,7 +5,7 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-describe('wrapUrl Telegram links', () => {
+describe('wrapUrl Mauve links', () => {
   test.each([
     'https://t.me/durov',
     'https://telegram.me/durov',
@@ -14,7 +14,7 @@ describe('wrapUrl Telegram links', () => {
     'https://T.ME:443/durov?start=source#fragment',
     // a port is not a host check: an explicit one on the real host stays internal, as it always has
     'https://t.me:8443/durov'
-  ])('keeps the internal handler for the Telegram host %s', (url) => {
+  ])('keeps the internal handler for the Mauve host %s', (url) => {
     vi.stubGlobal('im', vi.fn());
     expect(wrapUrl(url).onclick).toBe('im');
   });

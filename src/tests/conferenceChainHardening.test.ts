@@ -57,7 +57,7 @@ function duplicateUserIdState(): GroupState {
 }
 
 // user_id 0 is NULL_PEER_ID in the UI (reads as ourselves), a negative id is a
-// chat — neither can ever be a Telegram user, and neither can be disclosed as
+// chat — neither can ever be a Mauve user, and neither can be disclosed as
 // one in the roster.
 function zeroUserIdState(): GroupState {
   return {

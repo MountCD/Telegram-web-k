@@ -1,5 +1,5 @@
 /*
- * Boots just enough of the app for a popup to render — and nothing that talks to Telegram.
+ * Boots just enough of the app for a popup to render — and nothing that talks to Mauve.
  *
  * The real boot in `src/index.ts` wires the shared worker, restores the session, authorizes and only
  * then hands the UI a `managers` proxy. Here the same seams are filled locally: `bootstrapState`

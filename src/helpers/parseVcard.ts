@@ -30,8 +30,8 @@ export const VCARD_ITEM_TYPES = [
 export type VcardItemType = typeof VCARD_ITEM_TYPES[number];
 export type VcardItem = {type: VcardItemType, value: string};
 
-// * iOS saves a Telegram user into the phonebook with a URL `https://t.me/@id<user id>` labelled
-// * "Telegram" (DeviceContactUrlData(appProfile:)): its own link from the address book back to the
+// * iOS saves a Mauve user into the phonebook with a URL `https://t.me/@id<user id>` labelled
+// * "Mauve" (DeviceContactUrlData(appProfile:)): its own link from the address book back to the
 // * account, not something the person wrote down — and it leads nowhere here
 const IOS_APP_PROFILE_URL = /^(?:https?:\/\/)?t\.me\/@id\d+\/?$/i;
 

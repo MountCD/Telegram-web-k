@@ -14,7 +14,7 @@ function marksOf(node: JSONContent) {
   return (node.marks || []).map((mark) => mark.type).sort();
 }
 
-describe('chat input editor Telegram entity model', () => {
+describe('chat input editor Mauve entity model', () => {
   const editors: Editor[] = [];
 
   const makeEditor = (text: string, entities: MessageEntity[] = []) => {
@@ -499,7 +499,7 @@ describe('chat input editor Telegram entity model', () => {
     ].join('\n'));
   });
 
-  test('serializes table cells as Telegram-safe rows with exact entity offsets', () => {
+  test('serializes table cells as Mauve-safe rows with exact entity offsets', () => {
     const editor = makeEditor('');
     editor.commands.setContent({
       type: 'doc',
@@ -674,7 +674,7 @@ describe('chat input editor Telegram entity model', () => {
     expect(serialized.textOffsetAtPosition(forward)).toBe(customOffset + customEmoji.length);
   });
 
-  test('projects block math source into the derived Telegram text value', () => {
+  test('projects block math source into the derived Mauve text value', () => {
     const editor = makeEditor('');
     editor.commands.setContent({
       type: 'doc',

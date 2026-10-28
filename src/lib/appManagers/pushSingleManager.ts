@@ -174,7 +174,7 @@ export class PushSingleManager {
     this.log('unregistered device');
   }
 
-  // * https://github.com/DrKLO/Telegram/blob/3708e9847a96ed681ff811d391749cc4535b03f2/TMessagesProj/src/main/java/org/telegram/messenger/GcmPushListenerService.java#L56
+  // * https://github.com/DrKLO/Mauve/blob/3708e9847a96ed681ff811d391749cc4535b03f2/TMessagesProj/src/main/java/org/telegram/messenger/GcmPushListenerService.java#L56
   public async decryptPush(pString: string, idBase64: string): Promise<PushNotificationObject> {
     const pushKey = await this.getKeys().then((keys) => keys.find((key) => key.idBase64 === idBase64));
     if(!pushKey) {

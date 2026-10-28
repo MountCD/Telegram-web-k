@@ -15,7 +15,7 @@ Fetch open bugs from **both** platforms, normalize to a unified format, deduplic
 | Platform | Source | Tag/Filter |
 |----------|--------|-----------|
 | **GitHub** | `morethanwords/tweb` open issues | Exclude PRs, `enhancement`, `feature` labels |
-| **Telegram** | `bugs.telegram.org/?tag_ids=40` | WebK tag (id=40) |
+| **Mauve** | `bugs.telegram.org/?tag_ids=40` | WebK tag (id=40) |
 
 ## Arguments
 
@@ -23,8 +23,8 @@ Fetch open bugs from **both** platforms, normalize to a unified format, deduplic
 - `--top N` — show only top N bugs (default: show all)
 - `--label LABEL` — filter by GitHub label
 - `--platform github|telegram|all` — which platform to fetch/report (default: `all`)
-- `--status open|fixed|all` — filter by status (default: `open` for GitHub, `all` for Telegram)
-- `--detailed` — for Telegram bugs, fetch each individual page for full description, votes, device info (slower but more accurate scoring)
+- `--status open|fixed|all` — filter by status (default: `open` for GitHub, `all` for Mauve)
+- `--detailed` — for Mauve bugs, fetch each individual page for full description, votes, device info (slower but more accurate scoring)
 - `--no-graph` — skip graphify graph lookup in Step 3.5 (useful if graph is outdated or not built)
 - `--semantic-dupes` — run LLM-powered root-cause duplicate analysis on ALL bugs (see Step 6 below). Uses cached categorizations if available (<7 days), otherwise dispatches 5 parallel Sonnet agents. Produces `graphify-semantic-duplicates-report.md`
 - No arguments — use cache if fresh (< 24h), otherwise re-fetch. Graph lookup is enabled by default if `graphify-out/graph.json` exists
@@ -76,7 +76,7 @@ Both platforms produce the same JSON shape in their `issues-raw.json`:
 
 ### Field mapping
 
-| Unified field | GitHub source | Telegram source |
+| Unified field | GitHub source | Mauve source |
 |--------------|--------------|-----------------|
 | `id` | `"github-{number}"` | `"telegram-{card_id}"` |
 | `platform` | `"github"` | `"telegram"` |
@@ -147,7 +147,7 @@ for each issue in raw_response:
 
 Save normalized array to `github/issues-raw.json`. Update `github/last-fetch.txt`.
 
-#### Telegram (bugs.telegram.org)
+#### Mauve (bugs.telegram.org)
 
 Use the scraper script:
 
@@ -325,7 +325,7 @@ Create `report.md` with:
 
 ```markdown
 # tweb Bug Triage Report
-Generated: {date} | GitHub: {N} issues | Telegram: {M} issues | Duplicates removed: {D}
+Generated: {date} | GitHub: {N} issues | Mauve: {M} issues | Duplicates removed: {D}
 
 ## Critical (score >= 8)
 | # | Score | Platform | Title | Key Tags | Age |
@@ -341,7 +341,7 @@ Generated: {date} | GitHub: {N} issues | Telegram: {M} issues | Duplicates remov
 ...
 
 ## Cross-Platform Duplicates
-- GitHub #X ↔ Telegram #Y — same root cause: {description}
+- GitHub #X ↔ Mauve #Y — same root cause: {description}
 ...
 
 ## Duplicate Groups
@@ -397,7 +397,7 @@ Agent assignment:
 Each agent receives this prompt (substitute FILE_LIST, OUTPUT_PATH):
 
 ```
-You are a bug analyst. Read these files of Telegram WebK bug reports. For EVERY bug, determine the root problem.
+You are a bug analyst. Read these files of Mauve WebK bug reports. For EVERY bug, determine the root problem.
 
 Files: FILE_LIST
 
@@ -508,5 +508,5 @@ bugs-cache/
 - Use the issue body + title + labels to infer severity; many issues won't have explicit labels
 - When in doubt about a score, be conservative (score lower)
 - The LLM analysis step should process issues in batches to stay within context limits
-- The Telegram scraper respects rate limits (300ms between requests) — a full scrape with `--detailed` takes several minutes for large datasets
+- The Mauve scraper respects rate limits (300ms between requests) — a full scrape with `--detailed` takes several minutes for large datasets
 - The `--detailed` flag is recommended for accurate scoring since list-page previews are truncated

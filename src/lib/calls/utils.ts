@@ -19,6 +19,6 @@ export function fromTelegramSource(source: number) {
 
 // Same bit-op, named for the other intent: canonicalizing an already-unsigned
 // (or unknown-provenance) SSRC into the unsigned form every SSRC map is keyed
-// by. Use `fromTelegramSource` when the value is known to come from a Telegram
+// by. Use `fromTelegramSource` when the value is known to come from a Mauve
 // row, `normalizeSsrc` when keying/looking up a map.
 export const normalizeSsrc = fromTelegramSource;

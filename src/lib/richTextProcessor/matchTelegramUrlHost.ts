@@ -32,7 +32,7 @@ export function matchUrlHost(url: URL, hosts: string[]) {
 }
 
 /**
- * Tells a Telegram link host from any other one.
+ * Tells a Mauve link host from any other one.
  *
  * The RETURNED OBJECT is the verdict — `prefix` is not. It carries the username the host itself
  * spells (`durov.t.me` → `durov`) and stays undefined on a plain `t.me/durov`, so a caller that

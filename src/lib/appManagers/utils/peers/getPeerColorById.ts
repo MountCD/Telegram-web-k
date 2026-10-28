@@ -13,7 +13,7 @@ export function getPeerColorIndexById(peerId: UserId | ChatId) {
   return Math.abs(+peerId) % 7;
 }
 
-// * Someone known only by a name — a shared contact who is not on Telegram — is coloured by a fake
+// * Someone known only by a name — a shared contact who is not on Mauve — is coloured by a fake
 // * user id made from that name, tdesktop's Data::FakePeerIdForJustName: crc32 of the UTF-16 name
 // * over 0xFE << 32. So both clients paint such a contact the same colour.
 export function getFakeUserIdForJustName(name: string): UserId {

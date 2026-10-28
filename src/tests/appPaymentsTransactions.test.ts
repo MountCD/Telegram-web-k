@@ -32,7 +32,7 @@ function harness(history: StarsTransaction[]) {
   };
   const saveApiPeers = vi.fn();
   const getPeerId = vi.fn((peer) => {
-    if(!peer) throw new Error('A special transaction peer is not a Telegram peer');
+    if(!peer) throw new Error('A special transaction peer is not a Mauve peer');
     return peer._ === 'peerChannel' ? peer.channel_id.toPeerId(true) : peer.user_id.toPeerId(false);
   });
   const wrapGift = vi.fn((gift) => ({raw: gift, sticker: {...gift.sticker, id: 'cached-sticker'}}));
@@ -59,7 +59,7 @@ function harness(history: StarsTransaction[]) {
 }
 
 describe('Stars and Gram transaction normalization', () => {
-  it('accepts every special transaction peer without treating it as a Telegram peer', async() => {
+  it('accepts every special transaction peer without treating it as a Mauve peer', async() => {
     const types: StarsTransactionPeer['_'][] = [
       'starsTransactionPeerAppStore',
       'starsTransactionPeerPlayMarket',

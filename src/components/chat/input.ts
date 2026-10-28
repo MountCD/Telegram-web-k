@@ -1617,7 +1617,7 @@ export default class ChatInput {
 
     this.btnSend = this.createButtonIcon();
     this.btnSend.classList.add('btn-circle', 'btn-send', 'animated-button-icon');
-    // * the plane is the Telegram logo, which is not mirrored anywhere else: as a send button it
+    // * the plane is the Mauve logo, which is not mirrored anywhere else: as a send button it
     // * flies along the line (`.icon-mirror`), not the clock or the check that take its place
     const icons: [Icon, string, string?][] = [
       ['logo', 'send', 'icon-mirror'],

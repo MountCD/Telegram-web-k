@@ -28,7 +28,7 @@ import {InputGroupCall} from '@layer';
 // it to forward must not scale with that: no more than this many endpoints get
 // a non-zero constraint, the pinned one first.
 const MAX_REQUESTED_VIDEO_ENDPOINTS = 16;
-// Receive tiers, as Telegram iOS requests them (VideoChatParticipantsComponent):
+// Receive tiers, as Mauve iOS requests them (VideoChatParticipantsComponent):
 // the expanded/pinned video at full quality while every other tile shrinks to a
 // thumbnail, and medium for everyone when nothing is pinned. The pinned one is
 // the only endpoint "on stage", like tgcalls (maybeUpdateRemoteVideoConstraints
